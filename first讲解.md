@@ -371,7 +371,7 @@ LogComponentEnable ("UdpEchoServerApplication", LOG_LEVEL_INFO);
 
 * LOG_ALL ——记录上述所有内容。
 
-      
+  ​    
 
 ​	  对于每个LOG_TYPE，还有一个LOG_LEVEL_TYPE，因此，LOG_ERROR和LOG_LEVEL_ERROR以及LOG_ALL和LOG_LEVEL_ALL在功能上是等效的。除了记录本级别外，还记录其下所有级别。例如，启用LOG_INFO将仅启用NS_LOG_INFO提供的消息，而启用LOG_LEVEL_INFO还将启用在其之下的NS_LOG_DEBUG，NS_LOG_WARN和NS_LOG_ERROR提供的消息。
 
@@ -539,4 +539,4 @@ $ ./waf --run scratch/first --vis
 
 ![image-20200822010405618](http://r.photo.store.qq.com/psc?/V53mQfQh1FnNCr2V9md70Xppby3h3SOQ/TmEUgtj9EK6.7V8ajmQrEEN0gSn1B2.UghqlmS7Bw4Dv8Og0OsdpzGSz3V5fQ1sgxwjP1TsWzw0pPyEU7sfHuopJz6bU7aHbaQgHtFIqPrU!/r)
 
-​	能看到双向的数据流。同样，随着时间的前进命令行也会蹦出发包收包的消息。
+​	能看到双向的数据流。同样，随着时间的前进命令行也会跳出发包收包的消息。

@@ -2,3 +2,21 @@
 #include <iostream>
 
 using namespace std;
+
+void printSum()
+{
+    double res = 0;
+    for (int i = 1; i <= 100; i++)
+    {
+        if (i % 2)
+            res += 1.0 / i;
+        else
+            res -= 1.0 / i;
+    }
+    cout << res << endl;
+}
+
+int main()
+{
+    printSum();
+}

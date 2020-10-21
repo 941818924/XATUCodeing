@@ -7,7 +7,7 @@ using namespace std;
 void printNumber()
 {
     int i, j;
-    for (i = 100; i <= 200; i++)
+    for (i = 101; i <= 200; i += 2)
     {
         for (j = 2; j < sqrt(i); j++)
         {

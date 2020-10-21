@@ -23,6 +23,6 @@ int findNumber(int a, int b)
 
 int main()
 {
-    int m = 6, n = 8, res;
+    int m = 6, n = 8;
     cout << "最大公约数为：" << findNumber(m, n) << endl;
 }

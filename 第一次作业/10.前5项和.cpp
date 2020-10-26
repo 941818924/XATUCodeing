@@ -20,7 +20,7 @@ int printSum(int a)
 int main()
 {
     int i;
-    cout << "please enter your number :" << endl;
+    cout << "Please enter a number :" << endl;
     cin >> i;
     cout << "sum is : " << printSum(i) << endl;
 }

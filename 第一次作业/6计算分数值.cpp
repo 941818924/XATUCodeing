@@ -5,7 +5,7 @@ using namespace std;
 
 void printSum()
 {
-    float res = 0;
+    double res = 0;
     for (int i = 1; i <= 100; i++)
     {
         if (i % 2)

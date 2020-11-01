@@ -9,10 +9,10 @@ using namespace std;
 
 int calPos(queue<int> &q)
 {
-    int pos = 1;
+    int pos = 1, tmp;
     while (q.size() > 1)
     {
-        int x = q.front();
+        tmp = q.front();
         q.pop();
         if (pos == 5)
         {
@@ -20,7 +20,7 @@ int calPos(queue<int> &q)
         }
         else
         {
-            q.push(x);
+            q.push(tmp);
             pos++;
         }
     }

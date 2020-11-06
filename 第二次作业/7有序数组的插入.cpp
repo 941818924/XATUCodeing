@@ -5,7 +5,7 @@ using namespace std;
 
 void mySort(vector<int> &a, int n)
 {
-    for (int i = 0; i < 8; i++)
+    for (int i = 0; i < 9; i++)
     {
         if (a[i] > n)
         {
@@ -23,9 +23,9 @@ void mySort(vector<int> &a, int n)
 
 int main()
 {
-    vector<int> a(9);
+    vector<int> a(10);
     int num;
-    for (int i = 0; i < 8; i++)
+    for (int i = 0; i < 9; i++)
     {
         cout << "ÇëÊäÈëa[" << i << "]";
         cin >> a[i];

@@ -16,7 +16,7 @@ struct Student
     int score[3];
 };
 
-void print(struct Student stu[])
+void print(Student stu[])
 {
     int i, j;
     for (i = 0; i < N; i++)
@@ -28,7 +28,7 @@ void print(struct Student stu[])
     }
 }
 
-void input(struct Student stu[])
+void input(Student stu[])
 {
     int i, j;
     for (i = 0; i < N; i++)
@@ -45,7 +45,7 @@ void input(struct Student stu[])
         }
     }
 }
-void average(struct Student stu[])
+void average(Student stu[])
 {
 
     int i, j;
@@ -61,7 +61,7 @@ void average(struct Student stu[])
     cout << "3门课的总平均成绩:" << sum << endl;
 }
 
-void highscores(struct Student stu[])
+void highscores(Student stu[])
 {
 
     int i, j, sum;
@@ -92,12 +92,12 @@ void highscores(struct Student stu[])
 
 int main()
 {
-    struct Student stu[N] = {{0001, "Zhang San", {10, 20, 30}},
-                             {0002, "Li Si", {20, 30, 40}},
-                             {0003, "Wang Wu", {35, 45, 55}},
-                             {0004, "Du Liu", {55, 65, 75}},
-                             {0005, "Ma Qi", {70, 80, 95}}}; //测试数据
-    //struct Student stu[N];
+    Student stu[N] = {{0001, "Zhang San", {10, 20, 30}},
+                      {0002, "Li Si", {20, 30, 40}},
+                      {0003, "Wang Wu", {35, 45, 55}},
+                      {0004, "Du Liu", {55, 65, 75}},
+                      {0005, "Ma Qi", {70, 80, 95}}}; //测试数据
+    //Student stu[N];
     //input(stu);
     print(stu);
     average(stu);

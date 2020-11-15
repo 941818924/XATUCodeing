@@ -33,18 +33,25 @@ void add(Fenshu a, Fenshu b)
 {
     int fz = a.fenzi * b.fenmu + b.fenzi * a.fenmu;
     int fm = a.fenmu * b.fenmu;
-    pair<int, int> p(fz / findNumber(fz, fm), fm / findNumber(fz, fm));
-    if (p.second == 1) //考虑化简
+    if (fz == 0) //避免下面的代码因0做除数崩掉
     {
-        cout << "相加等于: " << p.first << endl;
-    }
-    else if (p.second == -1)
-    {
-        cout << "相加等于: " << 0 - p.first << endl;
+        cout << "相加等于: 0" << endl;
     }
     else
     {
-        cout << "相加等于: " << p.first << "/" << p.second << endl;
+        pair<int, int> p(fz / findNumber(fz, fm), fm / findNumber(fz, fm));
+        if (p.second == 1) //考虑化简
+        {
+            cout << "相加等于: " << p.first << endl;
+        }
+        else if (p.second == -1)
+        {
+            cout << "相加等于: " << 0 - p.first << endl;
+        }
+        else
+        {
+            cout << "相加等于: " << p.first << "/" << p.second << endl;
+        }
     }
 }
 
@@ -52,56 +59,77 @@ void sub(Fenshu a, Fenshu b)
 {
     int fz = a.fenzi * b.fenmu - b.fenzi * a.fenmu;
     int fm = a.fenmu * b.fenmu;
-    pair<int, int> p(fz / findNumber(fz, fm), fm / findNumber(fz, fm));
-    if (p.second == 1)
+    if (fz == 0) //避免下面的代码因0做除数崩掉
     {
-        cout << "相减等于: " << p.first << endl;
-    }
-    else if (p.second == -1)
-    {
-        cout << "相减等于: " << 0 - p.first << endl;
+        cout << "相减等于: 0" << endl;
     }
     else
     {
-        cout << "相减等于: " << p.first << "/" << p.second << endl;
+        pair<int, int> p(fz / findNumber(fz, fm), fm / findNumber(fz, fm));
+        if (p.second == 1)
+        {
+            cout << "相减等于: " << p.first << endl;
+        }
+        else if (p.second == -1)
+        {
+            cout << "相减等于: " << 0 - p.first << endl;
+        }
+        else
+        {
+            cout << "相减等于: " << p.first << "/" << p.second << endl;
+        }
     }
 }
 
 void mul(Fenshu a, Fenshu b)
 {
-    int fz = a.fenzi * b.fenzi;
-    int fm = a.fenmu * b.fenmu;
-    pair<int, int> p(fz / findNumber(fz, fm), fm / findNumber(fz, fm));
-    if (p.second == 1)
+    if (a.fenzi == 0 || b.fenzi == 0) //考虑分子等于0
     {
-        cout << "相乘等于: " << p.first << endl;
-    }
-    else if (p.second == -1)
-    {
-        cout << "相乘等于: " << 0 - p.first << endl;
+        cout << "相乘等于：0" << endl;
     }
     else
     {
-        cout << "相乘等于: " << p.first << "/" << p.second << endl;
+        int fz = a.fenzi * b.fenzi;
+        int fm = a.fenmu * b.fenmu;
+        pair<int, int> p(fz / findNumber(fz, fm), fm / findNumber(fz, fm));
+        if (p.second == 1)
+        {
+            cout << "相乘等于: " << p.first << endl;
+        }
+        else if (p.second == -1)
+        {
+            cout << "相乘等于: " << 0 - p.first << endl;
+        }
+        else
+        {
+            cout << "相乘等于: " << p.first << "/" << p.second << endl;
+        }
     }
 }
 
 void div(Fenshu a, Fenshu b)
 {
-    int fz = a.fenzi * b.fenmu;
-    int fm = a.fenmu * b.fenzi;
-    pair<int, int> p(fz / findNumber(fz, fm), fm / findNumber(fz, fm));
-    if (p.second == 1)
+    if (a.fenzi == 0 || b.fenzi == 0) //考虑分子等于0
     {
-        cout << "相除等于: " << p.first << endl;
-    }
-    else if (p.second == -1)
-    {
-        cout << "相除等于: " << 0 - p.first << endl;
+        cout << "0不能做除数或者被除" << endl;
     }
     else
     {
-        cout << "相除等于: " << p.first << "/" << p.second << endl;
+        int fz = a.fenzi * b.fenmu;
+        int fm = a.fenmu * b.fenzi;
+        pair<int, int> p(fz / findNumber(fz, fm), fm / findNumber(fz, fm));
+        if (p.second == 1)
+        {
+            cout << "相除等于: " << p.first << endl;
+        }
+        else if (p.second == -1)
+        {
+            cout << "相除等于: " << 0 - p.first << endl;
+        }
+        else
+        {
+            cout << "相除等于: " << p.first << "/" << p.second << endl;
+        }
     }
 }
 
@@ -109,6 +137,11 @@ int main()
 {
     Fenshu a = {1, 2};
     Fenshu b = {1, 6};
+    if (a.fenmu == 0 || b.fenmu == 0) //考虑分母等于0
+    {
+        cout << "分母不能为0！" << endl;
+        return -1;
+    }
     cout << "分数a为： " << a.fenzi << "/" << a.fenmu << endl;
     cout << "分数b为： " << b.fenzi << "/" << b.fenmu << endl;
     cout << endl;

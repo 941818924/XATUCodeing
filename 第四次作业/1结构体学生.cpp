@@ -12,7 +12,7 @@ using namespace std;
 struct Student
 {
     int num;
-    char name[20];
+    string name;
     int score[3];
 };
 
